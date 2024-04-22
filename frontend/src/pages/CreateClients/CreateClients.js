@@ -91,7 +91,9 @@ const CreateClients = () => {
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                 />
-                <button onClick={handleSaveClient}>Save</button>
+                <button 
+                onClick={handleSaveClient}
+                >Save</button>
             </Form>
         </Wrapper>
     );

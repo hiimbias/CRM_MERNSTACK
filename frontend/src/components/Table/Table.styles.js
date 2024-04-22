@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   max-width: var(--maxWidth);
   margin: 50px auto;
   display: flex;
+  float: right;
   flex-direction: column;
   justify-content: space-between;;
   padding: 0 20px; // This will remove the space between the cells
@@ -43,7 +44,7 @@ export const Wrapper = styled.div`
         color: #6c9cf5;
         cursor: pointer;
         margin: 10px 0;
-        right: 0;
+        float: right;
     }
     
     .show-button {
@@ -66,3 +67,14 @@ export const Wrapper = styled.div`
         margin-left: 10px;
     }
 `;
+
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  h1 {
+    color: #6c9cf5;
+    margin: 0;
+  }`;

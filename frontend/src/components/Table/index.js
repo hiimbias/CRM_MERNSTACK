@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Wrapper } from "./Table.styles";
+import { Wrapper, Header } from "./Table.styles";
 import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
@@ -8,12 +8,15 @@ import { Popup } from "../Popup";
 import CreateClients from "../../pages/CreateClients/CreateClients";
 import DeleteClients from "../../pages/DeleteClients/DeleteClients";
 import ShowClient from "../../pages/ShowClients/ShowClient";
+
 const Table = ({ clients }) => {
   const [openPopup, setOpenPopup] = useState(false);
   const [showPage, setShowPage] = useState("");
   const [showModal, setShowModal] = useState(false);
   return (
     <Wrapper>
+      <Header>
+      <h1>Clients</h1>
       <MdOutlineAddBox
         className="add"
         onClick={() => {
@@ -21,6 +24,7 @@ const Table = ({ clients }) => {
           setShowPage("create");
         }}
       ></MdOutlineAddBox>
+      </Header>
       <table>
         <thead>
           <tr>
