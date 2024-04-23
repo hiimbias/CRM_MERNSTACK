@@ -9,6 +9,7 @@ import CreateClients from './pages/CreateClients/CreateClients';
 import DeleteClients from './pages/DeleteClients/DeleteClients';
 import ShowClient from './pages/ShowClients/ShowClient';
 import EditClients from './pages/EditClient/EditClients';
+import ShowOrder from './pages/ShowOrders/ShowOrder';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/client/edit/:id" element={<EditClients />} />
         <Route path="/client/details/:id" element={<ShowClient />} />
         <Route path="/client/delete/:id" element={<DeleteClients/>} />
+        <Route path="/order/details/:clientId" element={<ShowOrder />} />
       </Routes>
       <GlobalStyle />
     </Router>

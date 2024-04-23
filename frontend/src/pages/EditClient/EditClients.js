@@ -36,7 +36,7 @@ const EditClients = () => {
         console.log(error.response.data);
         setLoading(false);
       });
-  }, []); // Remove extra pair of curly braces
+  }, [id]); // Remove extra pair of curly braces
 
   const handleEditClient = () => {
     const data = {
@@ -255,7 +255,7 @@ const EditClients = () => {
           >
             Notes
           </label>
-          <input
+          <textarea
             type="text"
             placeholder="Notes"
             value={notes}
@@ -267,6 +267,9 @@ const EditClients = () => {
               padding: "0.5rem",
               width: "100%",
               fontSize: "1rem",
+              fontFamily: "inherit",
+              resize: "vertical",
+              outline: "none",
             }}
           />
         </div>
@@ -286,9 +289,7 @@ const EditClients = () => {
           >
             Status
           </label>
-          <input
-            type="text"
-            placeholder="Status"
+          <select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
             style={{
@@ -299,7 +300,12 @@ const EditClients = () => {
               width: "100%",
               fontSize: "1rem",
             }}
-          />
+          >
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="hold">Hold</option>
+            <option value="pending">Pending</option>
+          </select>
         </div>
         <button
           style={{
@@ -311,7 +317,6 @@ const EditClients = () => {
             borderRadius: "0.5rem",
             width: "100px",
             border: "none",
-            width: "100%",
           }}
           onClick={handleEditClient}
         >

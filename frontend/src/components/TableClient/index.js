@@ -8,8 +8,9 @@ import { Popup } from "../Popup";
 import CreateClients from "../../pages/CreateClients/CreateClients";
 import DeleteClients from "../../pages/DeleteClients/DeleteClients";
 import ShowClient from "../../pages/ShowClients/ShowClient";
+import { FaShoppingBasket } from "react-icons/fa";
 
-const Table = ({ clients }) => {
+const Table = ({ clients, orders }) => {
   const [openPopup, setOpenPopup] = useState(false);
   const [showPage, setShowPage] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -36,7 +37,7 @@ const Table = ({ clients }) => {
             <th>Address</th>
             <th>Notes</th>
             <th>Status</th>
-            <th></th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -44,7 +45,11 @@ const Table = ({ clients }) => {
             <tr key={client._id}
             >
               <td>{index + 1}</td>
-              <td>{client.name}</td>
+              <td
+              style={{
+                            width: '150px',
+                        }}
+              >{client.name}</td>
               <td>{client.email}</td>
               <td>{client.dob}</td>
               <td>{client.phone}</td>
@@ -63,11 +68,11 @@ const Table = ({ clients }) => {
                     columnGap: '1rem',
                 }}
                 >
-                  <Link to={`/client/details/${client._id}`}
+                  <Link to={`/order/details/${client._id}`}
                   >
-                    <BsInfoCircle
+                    <FaShoppingBasket
                       className="show-button"
-                    ></BsInfoCircle>
+                    ></FaShoppingBasket>
                   </Link>
                   <Link to={`client/edit/${client._id}`}
                   

@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const clientRoutes = require('./routes/client.routes');
+const orderRoutes = require('./routes/order.routes');
 const cors = require('cors');
 
 
@@ -9,15 +10,15 @@ require('dotenv').config();
 const app = express()
 
 app.use(express.json());
-app.use(cors())
+app.use(cors()) // allow cross-origin requests
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next();
 });
-// Set up a route
+// Set up routes
 app.use('/client', clientRoutes);
-
+app.use('/order', orderRoutes);
 
 // Set up the server
 

@@ -1,26 +1,18 @@
 const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
-    client: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Client',
-        required: true
+    clientId: {
+        type: String,
+        default: String
     },
     orderDate: {
-        type: Date,
-        default: Date.now
+        type: String,
+        default: String
     },
-    products: [{
-        product: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product', // Tên model mà ObjectId này tham chiếu đến
-            required: true
-        },
-        quantity: {
-            type: Number,
-            required: true
-        }
-    }],
+    items: {
+        type: Array,
+        required: true
+    },
     total: {
         type: Number,
         required: true
@@ -29,7 +21,11 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+},
+{
+    timestamps: true
+}
+);
 
 const Order = mongoose.model('Order', orderSchema);
 module.exports = Order;

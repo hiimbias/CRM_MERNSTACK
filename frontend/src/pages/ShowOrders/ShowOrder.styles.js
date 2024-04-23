@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   max-width: var(--maxWidth);
   margin: 50px auto;
   display: flex;
-  float: right;
   flex-direction: column;
   justify-content: space-between;;
   padding: 0 20px; // This will remove the space between the cells
@@ -18,7 +17,8 @@ export const Wrapper = styled.div`
   th,
   td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
+    
   }
     th {
         background-color: #6c9cf5;
@@ -28,43 +28,16 @@ export const Wrapper = styled.div`
     tr {
         background-color: #f5f5f5;
         color: black;
+        border: 1px solid #d4d4d4;
     }
-    tr:nth-child(even) {
-        background-color: #6c9cf5;
-        color: var(--white);
+    .item-row:nth-child(even) {
+        background-color: #f5f5f5;
+        color: black;
     }
 
     tr:hover {
         background-color: #dbfcff;
         color: black;
-    }
-
-    .add {
-        font-size: 2rem;
-        color: #6c9cf5;
-        cursor: pointer;
-        margin: 10px 0;
-        float: right;
-    }
-    
-    .show-button {
-        color: #07f7df;
-        cursor: pointer;
-        font-size: 20px;
-        margin-left: 10px;
-    }
-    .edit-button{
-      color: #e65555;
-        cursor: pointer;
-        font-size: 20px;
-        margin-left: 10px;
-    }
-
-    .delete-button {
-        color: #f5f233;
-        cursor: pointer;
-        font-size: 20px;
-        margin-left: 10px;
     }
 `;
 
